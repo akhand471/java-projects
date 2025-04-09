@@ -55,7 +55,7 @@ public class ToDoListManager {
     // View all tasks
     public static void viewTasks() {
         if (tasks.isEmpty()) {
-            System.out.println("📭 No tasks yet!");
+            System.out.println(" No tasks yet!");
         } else {
             System.out.println("\nYour Tasks:");
             for (int i = 0; i < tasks.size(); i++) {
