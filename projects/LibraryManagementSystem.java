@@ -30,7 +30,7 @@ public class LibraryManagementSystem {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("📚 Welcome to Library Management System");
+        System.out.println(" Welcome to Library Management System");
 
         boolean exit = false;
         while (!exit) {
@@ -54,10 +54,10 @@ public class LibraryManagementSystem {
                 case 5 -> returnBook();
                 case 6 -> deleteBook();
                 case 7 -> {
-                    System.out.println("👋 Exiting Library System. See you again!");
+                    System.out.println(" Exiting Library System. See you again!");
                     exit = true;
                 }
-                default -> System.out.println("❌ Invalid choice. Try again.");
+                default -> System.out.println(" Invalid choice. Try again.");
             }
         }
     }
@@ -68,14 +68,14 @@ public class LibraryManagementSystem {
         System.out.print("Enter author name: ");
         String author = sc.nextLine();
         library.add(new Book(title, author));
-        System.out.println("✅ Book added to library.");
+        System.out.println(" Book added to library.");
     }
 
     static void viewBooks() {
         if (library.isEmpty()) {
-            System.out.println("📭 No books in the library.");
+            System.out.println(" No books in the library.");
         } else {
-            System.out.println("\n📚 Library Books:");
+            System.out.println("\n Library Books:");
             for (int i = 0; i < library.size(); i++) {
                 System.out.println((i + 1) + ". " + library.get(i));
             }
@@ -89,12 +89,12 @@ public class LibraryManagementSystem {
 
         for (Book book : library) {
             if (book.title.toLowerCase().contains(keyword)) {
-                System.out.println("🔍 Found: " + book);
+                System.out.println(" Found: " + book);
                 found = true;
             }
         }
         if (!found) {
-            System.out.println("❌ No book found with that title.");
+            System.out.println(" No book found with that title.");
         }
     }
 
@@ -106,13 +106,13 @@ public class LibraryManagementSystem {
         if (isValidIndex(index)) {
             Book book = library.get(index);
             if (book.isBorrowed) {
-                System.out.println("❌ Book is already borrowed.");
+                System.out.println(" Book is already borrowed.");
             } else {
                 book.borrow();
-                System.out.println("✅ You borrowed the book.");
+                System.out.println(" You borrowed the book.");
             }
         } else {
-            System.out.println("❌ Invalid book number.");
+            System.out.println(" Invalid book number.");
         }
     }
 
@@ -124,13 +124,13 @@ public class LibraryManagementSystem {
         if (isValidIndex(index)) {
             Book book = library.get(index);
             if (!book.isBorrowed) {
-                System.out.println("❌ Book is not currently borrowed.");
+                System.out.println(" Book is not currently borrowed.");
             } else {
                 book.returnBook();
-                System.out.println("✅ Book returned successfully.");
+                System.out.println(" Book returned successfully.");
             }
         } else {
-            System.out.println("❌ Invalid book number.");
+            System.out.println(" Invalid book number.");
         }
     }
 
@@ -141,9 +141,9 @@ public class LibraryManagementSystem {
 
         if (isValidIndex(index)) {
             library.remove(index);
-            System.out.println("🗑 Book deleted.");
+            System.out.println(" Book deleted.");
         } else {
-            System.out.println("❌ Invalid book number.");
+            System.out.println(" Invalid book number.");
         }
     }
 
